@@ -6,8 +6,9 @@ import logging
 
 version = "0.0.4"
 # Das ist die Version des Bots
-LC = os.getenv("LOG_CHANNEL")
-DB = os.getenv("DEBUG_CHANNEL")
+load_dotenv()
+log_channel = os.getenv("LOG_CHANNEL")
+debug_channel = os.getenv("DEBUG_CHANNEL")
 
 intents = discord.Intents.default()
 intents.members = True
@@ -19,7 +20,7 @@ activity = discord.Activity(
 ezcord.set_log(
     log_level=logging.DEBUG,
     discord_log_level=logging.INFO,
-    webhook_url=LC,
+    webhook_url=log_channel
 
 )
 
@@ -28,7 +29,7 @@ bot = ezcord.Bot(
     intents=intents,
     debug_guilds=[723945239223599188],
     activity=activity,
-    error_webhook_url=DB
+    error_webhook_url=debug_channel
 )
 
 
@@ -36,5 +37,4 @@ if __name__ == "__main__":
     bot.load_cogs(subdirectories=True)
 
 
-load_dotenv()
 bot.run(os.getenv("TOKEN"))
