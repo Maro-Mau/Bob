@@ -13,12 +13,26 @@ Gif Datein
 * Levelingsystem
 ```
 Je nach nachricht werden Zwischen 5-35 Exp vergeben alle 100 Exp gibt es ein LVL UP.
+Datenbank System wurde Optimiert.
 ```
 * Context bzw Apps
 ```
 Über die Mitglider Liste kannst du kleine Mini Befehle ausführen.
 ```
+## Errorlog Debuglog
+### Discord Channel wurden erstellt in dem die Logs über erros und status angezeigt werden
+
 
 ## Noch mehr in Arbeit
 ### Wünsche zu weiteren Gif Befehlen weitere Funktionen bitte in den Bot Wunsch channel einstellen :D
-Erstellt mit Py-Cord
+
+# Comming Soon
+* Rollensystem
+* Automod
+* Radioplayer
+* Spotify Player
+* Watch Together
+* ChatGPT Integration
+* uvm...
+
+Erstellt mit Py-Cord und ezcord
