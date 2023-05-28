@@ -9,6 +9,7 @@ version = "0.0.4"
 load_dotenv()
 log_channel = os.getenv("LOG_CHANNEL")
 debug_channel = os.getenv("DEBUG_CHANNEL")
+server = os.getenv("SERVER_ID")
 
 intents = discord.Intents.default()
 intents.members = True
@@ -27,7 +28,7 @@ ezcord.set_log(
 
 bot = ezcord.Bot(
     intents=intents,
-    debug_guilds=[723945239223599188],
+    debug_guilds=[server],
     activity=activity,
     error_webhook_url=debug_channel
 )
