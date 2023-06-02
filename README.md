@@ -36,3 +36,5 @@ Datenbank System wurde Optimiert.
 * uvm...
 
 Erstellt mit Py-Cord und ezcord
+
+### Task erneuert
