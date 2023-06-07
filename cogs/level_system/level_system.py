@@ -58,7 +58,7 @@ class LevelSystem(commands.Cog):
         # check if user has leveled up
 
     @slash_command()
-    async def rank(self, ctx):
+    async def rang(self, ctx):
         async with aiosqlite.connect(self.DB) as db:
             async with db.execute("SELECT xp FROM Patient WHERE user_id = ?", (ctx.author.id,)) as cursor:
                 result = await cursor.fetchone()
@@ -81,7 +81,7 @@ class LevelSystem(commands.Cog):
                     await ctx.respond("Wir haben noch keine Krankenakten", ephemeral=True)
                     return
                 embed = discord.Embed(
-                    title="Rankliste", description="Hier ist unsere Rankliste der Fleißigen Tipser", color=0xFFD55E)
+                    title="Rangliste", description="Hier ist unsere Rankliste der Fleißigen Tipser", color=0xFFD55E)
                 for row in result:
                     user = self.bot.get_user(row[0])
                     embed.add_field(name=f"{user.name}",

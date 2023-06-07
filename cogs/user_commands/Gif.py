@@ -151,6 +151,33 @@ class Tenor(commands.Cog):
         embed.set_image(url=url)
         embed.set_footer(text="via Tenor/Enten sind cool")
         await ctx.respond(embed=embed)
+##############################################
+    @slash_command(description="Schicke ein Random Enten Gif")
+    async def glückbärchen(self, ctx):
+        key = os.getenv("TENOR_API")
+
+        params = {
+            "q": "Glückbärchen",
+            "key": key,
+            "limit": 100,
+            "media_filter": "gif",
+            "client_key": "Bob"
+        }
+
+        result = requests.get(
+            f"https://tenor.googleapis.com/v2/search", params=params)
+        data = result.json()
+        pprint(data)
+        number = random.randint(0, 10)
+        url = data["results"][number]["media_formats"]["gif"]["url"]
+
+        embed = discord.Embed(
+            title="Bärchen",
+            color=discord.Color.yellow()
+        )
+        embed.set_image(url=url)
+        embed.set_footer(text="via Tenor")
+        await ctx.respond(embed=embed)        
 
 
 def setup(bot):
