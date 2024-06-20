@@ -8,7 +8,7 @@ import discord.components
 class LevelSystem(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-        self.DB = r"datenbanken\level.db"
+        self.DB = r"daten/level.db"
 
     @staticmethod
     def get_level(xp):
