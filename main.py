@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 import ezcord
 import logging
 
-version = "0.0.4"
+version = "0.0.5"
 # Das ist die Version des Bots
 load_dotenv()
 log_channel = os.getenv("LOG_CHANNEL")
